@@ -1,0 +1,69 @@
+table, th, td {
+    border: 1px solid black;
+   
+}
+
+table.Header {
+    position:relative;
+    font-family: "Times New Roman", Times, serif;
+    border: 0px solid #FFFFFF;
+    text-align: center;
+    border-collapse: collapse;
+    top:60px;
+  }
+
+  table.Header td, table.Header th {
+    padding: 3px 10px;
+  }
+
+  table.Header tbody td {
+    font-size: 10px;
+     
+  }
+
+  table.Header thead th {
+    font-size: 10px;
+
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    background: #AEAAAA;
+  }
+
+  table.Header thead th:first-child {
+    height: 20px;
+  }
+
+#first_logo{
+  position: relative;
+  float:left;
+  width:100px;
+  height:70px;
+  left: 40px;
+  top:15px;
+}
+
+#text{
+  position: absolute;
+  text-align: center;
+  font-size: 10px;
+  width: 600px;
+  left: 330px;
+}
+
+
+#divUpdate{
+  position: relative;
+  width: 100%;
+  height: 40px;
+  top: 70px;
+  left: 40px;
+  font-size: 13px; 
+  font-weight: bold;
+}
+
+#pUpdate{
+  position: relative;
+  right: 80px;
+  top: +10px;
+}
