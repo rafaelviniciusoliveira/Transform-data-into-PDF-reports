@@ -46,4 +46,63 @@ CONFIG = pdfkit.configuration(wkhtmltopdf=PATH_WKHTMLTOPDF)
 PATH_FOLDER = os.getcwd()
 CSS = ('./styles/style.css')
 ```
+Now is time to build the html based on the dataset.
+
+```python
+html = '''
+    <!doctype html>
+        <html lang="en">
+            <head>
+                <title> Car Sales Report </title>
+                <meta name="description" content="Report">
+                <meta name="author" content="https://github.com/rafaelviniciusoliveira">
+                <meta charset="utf-8"> 
+            </head>
+            <body align='center'>
+'''
+summary = '''
+        <img src='{0}' id = 'first_logo' alt='Logo_1'>
+    '''.format( PATH_FOLDER + "\\img\\logo_1.png")
+   
+end = "<body></html>"
+
+update = datetime.now().strftime('%m/%d/%Y')
+table = f'''
+        <div id = "divUpdate">
+            <p id="pUpdate">
+                CAR SALES INFORMATION - LAST UPDATE ON {update}
+            </p>
+        </div>
+        </div>
+            <table class="Header" align="center" width="1250px" style = "top:70px" >
+                <thead>
+                    <th> Manufacturer </th>
+                    <th> Model </th>
+                    <th> Sales in thousands </th>
+                    <th> Price in thousands </th>
+                    <th> Horsepower </th>
+                    <th> Fuel efficiency </th>
+                    <th> Latest Launch </th>
+                </thead>'''
+
+for row in dataframe.itertuples():
+    table = table + '''<tr>
+    <td>{0}</td>
+    <td>{1}</td>
+    <td>{2}</td>
+    <td>{3}</td>
+    <td>{4}</td>
+    <td>{5}</td>
+    <td>{6}</td>
+   </tr>'''.format(row.Manufacturer,row.Model,row.Sales_in_thousands,row.Price_in_thousands,row.Horsepower,row.Fuel_efficiency,row.Latest_Launch)   
+table += "</table>"
+```
+Finally, generate de pdf.
+
+```python
+date = datetime.now().date().strftime('%d-%m-%Y')
+file_save_path, file = PATH_FOLDER + f'\\Reports\\', 'Car_sale_report.pdf'
+pdfkit.from_string(html + summary + table + end, file_save_path + file, css=CSS, configuration=CONFIG, options=OPTIONS) 
+print("Report Generated!")
+```
 
