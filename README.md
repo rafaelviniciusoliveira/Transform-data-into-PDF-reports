@@ -105,4 +105,6 @@ file_save_path, file = PATH_FOLDER + f'\\Reports\\', 'Car_sale_report.pdf'
 pdfkit.from_string(html + summary + table + end, file_save_path + file, css=CSS, configuration=CONFIG, options=OPTIONS) 
 print("Report Generated!")
 ```
+## Result
+<img src="Reports/Car_sale_report.pdf"></img>
 
