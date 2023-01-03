@@ -97,7 +97,7 @@ for row in dataframe.itertuples():
    </tr>'''.format(row.Manufacturer,row.Model,row.Sales_in_thousands,row.Price_in_thousands,row.Horsepower,row.Fuel_efficiency,row.Latest_Launch)   
 table += "</table>"
 ```
-Finally, generate de pdf.
+Finally, generate the file.
 
 ```python
 date = datetime.now().date().strftime('%d-%m-%Y')
