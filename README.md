@@ -106,5 +106,6 @@ pdfkit.from_string(html + summary + table + end, file_save_path + file, css=CSS,
 print("Report Generated!")
 ```
 ## Result
+Click on the link below to see the pdf generated.
 <img src="Reports/Car_sale_report.pdf"></img>
 
